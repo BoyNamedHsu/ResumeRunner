@@ -18,9 +18,9 @@ public class PlayerOne : PlayerGeneric
     }
 
     // Update is called once per frame
-    public void Update()
+    public void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
         // If falling, then multiply gravity to simulate a faster fall
         // Else if moving up and the jump button is still held, increase jump by a bit
@@ -34,7 +34,7 @@ public class PlayerOne : PlayerGeneric
             isGrounded = false;
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)

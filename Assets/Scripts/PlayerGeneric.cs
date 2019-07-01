@@ -11,11 +11,10 @@ public class PlayerGeneric : MonoBehaviour
     public float fallMultiplier;
     public int jumpHeight;
     public int jumpForce;
-    public BoxCollider col;
+    private BoxCollider col;
     // Start is called before the first frame update
     public void Start()
     {
-      speed = 2;
       jumpHeight = 7;
       jumpForce = 10;
       fallMultiplier = 2.5f;
@@ -23,7 +22,7 @@ public class PlayerGeneric : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update()
+    public void FixedUpdate()
     {
 
       // Move right at speed
