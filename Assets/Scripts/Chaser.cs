@@ -7,6 +7,7 @@ public class Chaser : PlayerGeneric
     // Start is called before the first frame update
     public void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         base.Start();
     }
 
