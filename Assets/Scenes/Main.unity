@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 12
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,7 +62,6 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
-    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -77,16 +76,10 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 512
     m_PVRBounces: 2
-    m_PVREnvironmentSampleCount: 256
-    m_PVREnvironmentReferencePointCount: 2048
-    m_PVRFilteringMode: 1
-    m_PVRDenoiserTypeDirect: 1
-    m_PVRDenoiserTypeIndirect: 1
-    m_PVRDenoiserTypeAO: 1
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVREnvironmentMIS: 1
+    m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -95,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-    m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -150,7 +142,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 9.972485, y: 0.30017567}
+  m_Offset: {x: 43.707333, y: 0.30017567}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -161,7 +153,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 67.059654, y: 1.6003513}
+  m_Size: {x: 2000, y: 1.6003513}
   m_EdgeRadius: 0
 --- !u!4 &145413944
 Transform:
@@ -176,6 +168,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &224520409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224520410}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &224520410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224520409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.44, y: 0.8, z: -2.8527527}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1137373776
 GameObject:
@@ -272,7 +294,7 @@ GameObject:
   - component: {fileID: 1176298248}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -403,7 +425,6 @@ MonoBehaviour:
   fallMultiplier: 0
   jumpHeight: 0
   jumpForce: 0
-  col: {fileID: 0}
 --- !u!114 &1176298248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,12 +437,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2d063ca4936bf4f8eb16b51e6f5a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 8
   rb: {fileID: 1176298243}
   fallMultiplier: 0
   jumpHeight: 0
   jumpForce: 0
-  col: {fileID: 0}
   lowJumpMultiplier: 0
   ground: {fileID: 0}
 --- !u!1 &1465295335
@@ -434,6 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1465295338}
   - component: {fileID: 1465295337}
+  - component: {fileID: 1465295339}
   - component: {fileID: 1465295336}
   m_Layer: 0
   m_Name: Main Camera
@@ -462,10 +483,9 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
+  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -507,6 +527,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1465295339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465295335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64264ba34daa9484a83581a7ac3106ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1176298242}
 --- !u!1 &1470559595
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,12 +572,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac835841ba2b3244bab116da85fdc142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 8.2
   rb: {fileID: 0}
   fallMultiplier: 0
   jumpHeight: 0
   jumpForce: 0
-  col: {fileID: 0}
 --- !u!50 &1470559597
 Rigidbody2D:
   serializedVersion: 4
@@ -649,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 1470559595}
   m_LocalRotation: {x: -0, y: -0, z: 0.0041299583, w: 0.9999915}
   m_LocalPosition: {x: -11.61, y: -0.37, z: 0}
-  m_LocalScale: {x: 0.92098105, y: 1.2454357, z: 0.2315567}
+  m_LocalScale: {x: 0.92098105, y: 1.9303008, z: 0.2315567}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
