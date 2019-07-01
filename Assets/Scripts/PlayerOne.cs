@@ -22,8 +22,11 @@ public class PlayerOne : PlayerGeneric
     {
         base.Update();
 
-        // If moving up and the jump button is still held, increase jump by a bit
-        if (rb.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Space)) {
+        // If falling, then multiply gravity to simulate a faster fall
+        // Else if moving up and the jump button is still held, increase jump by a bit
+        if (rb.velocity.y < 0) {
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        } else if (rb.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Space)) {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 

@@ -26,11 +26,6 @@ public class PlayerGeneric : MonoBehaviour
     public void Update()
     {
 
-      // If falling, then multiply gravity to simulate a faster fall
-      if (rb.velocity.y < 0) {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-      }
-
       // Move right at speed
       transform.Translate(transform.right * speed * Time.deltaTime);
     }
