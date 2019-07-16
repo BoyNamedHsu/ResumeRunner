@@ -15,7 +15,7 @@ public class PlayerGeneric : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-      speed = 2;
+      speed = 5;
       jumpHeight = 7;
       jumpForce = 10;
       fallMultiplier = 2.5f;
